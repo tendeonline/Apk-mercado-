@@ -60,6 +60,48 @@
       color: #b22222;
       font-weight: bold;
     }
+    .impact-time {
+      margin: 15px 0;
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #0a0a23;
+      text-align: center;
+    }
+    .app-image {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .app-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .download-section {
+      margin-top: 25px;
+      text-align: center;
+    }
+    .download-icon {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 15px;
+      filter: grayscale(100%);
+      opacity: 0.5;
+    }
+    .download-btn {
+      background: #777;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1.1em;
+      cursor: not-allowed;
+      opacity: 0.5;
+      pointer-events: none;
+      user-select: none;
+      text-decoration: none;
+      display: inline-block;
+    }
     footer {
       margin-top: 40px;
       text-align: center;
@@ -72,10 +114,18 @@
 
   <header>
     <h1>APK DE MP CON IMPACTO</h1>
-    <p>Simulador educativo con efectos reales - acceso por 1 hora</p>
+    <p>Simulador educativo con efectos reales</p>
   </header>
 
   <div class="container">
+
+    <div class="app-image">
+      <img src="https://cdn.openai.com/chatgpt/images/mockup_pago_abstracto_512x512.png" 
+           alt="Imagen simulada de APK de pago" />
+    </div>
+
+    <p class="impact-time">Esta app tiene impacto real durante 1 hora en el dispositivo donde se instala.</p>
+
     <h2>Precio: <span class="price">$37.000 ARS</span></h2>
 
     <div class="alias-box">
@@ -95,13 +145,20 @@
       <li>❗ Solo funciona en el dispositivo donde se instala (detecta ID)</li>
     </ul>
 
-    <!-- Botón para enviar comprobante -->
     <a class="cta" href="https://wa.me/549XXXXXXXXXX" target="_blank">Enviar comprobante por WhatsApp</a>
 
-    <!-- Mensaje importante -->
     <p class="warning-msg">
       ⚠️ El APK no estará disponible para descarga hasta que el pago haya sido verificado.
     </p>
+
+    <div class="download-section">
+      <img 
+        src="https://cdn-icons-png.flaticon.com/512/136/136522.png" 
+        alt="Icono de archivo para descargar" 
+        class="download-icon"
+      />
+      <button class="download-btn" disabled>Todavía no disponible</button>
+    </div>
 
     <footer>
       <p>Esta aplicación es una herramienta educativa. No está afiliada ni autorizada por Mercado Pago®.</p>
