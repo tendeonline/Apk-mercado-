@@ -2,167 +2,193 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Simulador de Pago y Descarga APK</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>APK DE MP CON IMPACTO</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      padding: 30px;
+      margin: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background: #0a0a23;
+      color: white;
+      padding: 20px;
       text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 30px;
+      background: white;
     }
     h1 {
-      color: #00457c;
+      color: #0a0a23;
     }
-
-    /* Ícono de descarga */
-    .download-icon {
-      width: 100px;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-      margin-top: 20px;
+    .price {
+      font-size: 1.5em;
+      color: green;
+      margin-top: 10px;
     }
-    .download-icon:hover {
-      transform: scale(1.1);
-    }
-
-    /* Texto debajo del ícono */
-    .descargar-texto {
-      font-size: 16px;
-      color: #333;
-      margin-top: 8px;
-    }
-
-    /* Caja de advertencia */
-    .advertencia-box {
-      max-width: 320px;
-      background-color: #ffe5e5;
-      border: 1px solid #ffb3b3;
+    .alias-box {
+      background: #e3e3ff;
       padding: 15px;
       border-radius: 8px;
-      margin: 30px auto 0;
+      margin: 20px 0;
+    }
+    .alias-box strong {
+      font-size: 1.2em;
+      color: #000;
+    }
+    .cta {
+      background: #0a0a23;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+    .warning-msg {
+      margin-top: 15px;
+      color: #b22222;
+      font-weight: bold;
       text-align: center;
     }
-
-    .logo-mercado {
-      width: 180px;
-      margin-bottom: 12px;
-    }
-
-    .advertencia {
-      color: #b30000;
+    .impact-time {
+      margin: 15px 0;
+      font-size: 1.1em;
       font-weight: bold;
-      font-size: 15px;
-      margin: 0;
+      color: #0a0a23;
+      text-align: center;
     }
-
-    /* Formulario simulado */
-    form {
-      margin-top: 30px;
-      max-width: 320px;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: left;
+    .app-image {
+      text-align: center;
+      margin-bottom: 20px;
     }
-    label {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: bold;
-      color: #00457c;
+    .app-image img {
+      max-width: 150px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    input[type="text"], input[type="number"] {
-      width: 100%;
-      padding: 8px 10px;
+    .download-section {
+      margin-top: 25px;
+      text-align: center;
+    }
+    .download-icon {
+      width: 100px;
+      height: 100px;
       margin-bottom: 15px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
-      font-size: 14px;
+      filter: grayscale(100%);
+      opacity: 0.5;
     }
-    button {
-      background-color: #00457c;
+    .download-btn {
+      background: #777;
       color: white;
-      padding: 10px 16px;
-      font-size: 16px;
+      padding: 12px 25px;
       border: none;
       border-radius: 6px;
-      cursor: pointer;
-      width: 100%;
-    }
-    button:disabled {
-      background-color: #888;
+      font-size: 1.1em;
       cursor: not-allowed;
+      opacity: 0.5;
+      pointer-events: none;
+      user-select: none;
+      text-decoration: none;
+      display: inline-block;
     }
-
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #777;
+    }
+    /* Logo Mercado Pago arriba del mensaje */
+    .logo-mercado {
+      display: block;
+      margin: 25px auto 10px;
+      width: 180px;
+      height: auto;
+    }
   </style>
 </head>
 <body>
 
-  <h1>Simulador de Pago</h1>
+  <header>
+    <h1>APK DE MP CON IMPACTO</h1>
+    <p>Simulador educativo con efectos reales</p>
+  </header>
 
-  <form id="pagoForm">
-    <label for="alias">Alias</label>
-    <input type="text" id="alias" name="alias" placeholder="Escribí tu alias" required />
+  <div class="container">
 
-    <label for="monto">Monto a pagar</label>
-    <input type="number" id="monto" name="monto" min="1" placeholder="Ejemplo: 100" required />
+    <div class="app-image">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Handshake_icon_blue.svg/1024px-Handshake_icon_blue.svg.png" alt="Logo Simulado Educativo" />
+    </div>
 
-    <button type="submit" id="btnPagar" disabled>Pagar</button>
-  </form>
+    <p class="warning-msg" style="text-align: center;">
+      ⚠️ Esta app es una simulación educativa. No es oficial ni realiza pagos reales.
+    </p>
 
-  <!-- Icono descarga APK -->
-  <a href="archivo.apk" download id="linkDescarga" style="display:none;">
-    <img
-      src="https://cdn-icons-png.flaticon.com/512/3022/3022255.png"
-      alt="Icono de archivo APK para descargar"
-      class="download-icon"
-    />
-  </a>
-  <div class="descargar-texto" id="textoDescarga" style="display:none;">
-    Haz clic en el ícono para descargar el APK
-  </div>
+    <p class="impact-time">Esta app tiene impacto real durante 1 hora en el dispositivo donde se instala.</p>
 
-  <!-- Advertencia con logo -->
-  <div class="advertencia-box">
-    <img
-      src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mercado_Pago_logo.svg/2560px-Mercado_Pago_logo.svg.png"
-      alt="Logo similar a Mercado Pago"
+    <h2>Precio: <span class="price">$52.000 ARS</span></h2>
+
+    <div class="alias-box">
+      <p>Transferí el monto a:</p>
+      <strong>Alias: theimportg55</strong><br />
+      <span>Titular: Iván Gómez</span>
+    </div>
+
+    <p><strong>Instrucciones:</strong> Realizá la transferencia y enviá el comprobante por WhatsApp o correo electrónico para recibir el enlace de descarga.</p>
+
+    <form id="paymentForm" style="margin: 30px 0;">
+      <h3>Datos de quien realiza el pago</h3>
+      <label for="nombre">Nombre y apellido:</label><br />
+      <input type="text" id="nombre" name="nombre" required style="width: 100%; padding: 8px; margin: 10px 0;" /><br />
+
+      <label for="aliasOrigen">Alias o nombre del titular desde el cual harás el pago:</label><br />
+      <input type="text" id="aliasOrigen" name="aliasOrigen" required style="width: 100%; padding: 8px; margin: 10px 0;" /><br />
+
+      <button type="submit" style="background-color: #0a0a23; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
+        Enviar datos
+      </button>
+    </form>
+
+    <script>
+      document.getElementById('paymentForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert('Datos enviados correctamente. Ahora podés continuar con el pago y enviar el comprobante.');
+      });
+    </script>
+
+    <a class="cta" href="https://wa.me/5492224513719" target="_blank">Enviar comprobante por WhatsApp</a>
+
+    <!-- Logo Mercado Pago arriba del mensaje -->
+    <img 
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mercado_Pago_logo.svg/2560px-Mercado_Pago_logo.svg.png" 
+      alt="Logo similar a Mercado Pago" 
       class="logo-mercado"
     />
-    <p class="advertencia">
-      Esta app no es oficial. Tiene impacto solo de 1 hora. No nos hacemos responsables del uso.
+
+    <p class="warning-msg">
+      ⚠️ Esta app no es oficial. Tiene impacto solo de 1 hora. No nos hacemos responsables del uso.
     </p>
+
+    <div class="download-section">
+      <img 
+        src="https://cdn-icons-png.flaticon.com/512/3022/3022255.png" 
+        alt="Icono de archivo APK para descargar" 
+        class="download-icon"
+      />
+      <button class="download-btn" disabled>Todavía no disponible</button>
+    </div>
+
+    <footer>
+      <p>Esta aplicación es una herramienta educativa. No está afiliada ni autorizada por Mercado Pago®.</p>
+    </footer>
   </div>
-
-  <script>
-    // Habilitar botón pagar solo si alias y monto están completos
-    const aliasInput = document.getElementById('alias');
-    const montoInput = document.getElementById('monto');
-    const btnPagar = document.getElementById('btnPagar');
-    const linkDescarga = document.getElementById('linkDescarga');
-    const textoDescarga = document.getElementById('textoDescarga');
-
-    function validarFormulario() {
-      btnPagar.disabled = !(aliasInput.value.trim() && montoInput.value > 0);
-    }
-
-    aliasInput.addEventListener('input', validarFormulario);
-    montoInput.addEventListener('input', validarFormulario);
-
-    // Simular pago y mostrar enlace descarga
-    document.getElementById('pagoForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-      alert('Pago simulado exitoso. Ahora podés descargar el APK.');
-
-      // Mostrar el enlace de descarga
-      linkDescarga.style.display = 'inline-block';
-      textoDescarga.style.display = 'block';
-
-      // Opcional: deshabilitar el formulario después del pago
-      aliasInput.disabled = true;
-      montoInput.disabled = true;
-      btnPagar.disabled = true;
-    });
-  </script>
 
 </body>
 </html>
